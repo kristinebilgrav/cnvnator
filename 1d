@@ -26,6 +26,7 @@ LD_LIBRARY_PATH=/opt/root/lib
     
     cd /opt/ && wget https://root.cern.ch/download/root_v6.13.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
     cd /opt/ && tar -xvf root_v6.13.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+    source root/bin/thisroot.sh
     
     export ROOTSYS=/opt/root
     export PATH=$PATH:$ROOTSYS/opt
