@@ -24,9 +24,9 @@ LD_LIBRARY_PATH=/opt/root/lib
     
     export PATH=/opt/anaconda/bin:${PATH} 
     
-    cd /opt/ && wget https://root.cern.ch/download/root_v6.13.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
-    cd /opt/ && tar -xvf root_v6.13.02.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
-    source root/bin/thisroot.sh
+    cd /opt/ && wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+    cd /opt/ && tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+    source /opt/root/bin/thisroot.sh
     
     export ROOTSYS=/opt/root
     export PATH=$PATH:$ROOTSYS/opt
@@ -45,4 +45,4 @@ LD_LIBRARY_PATH=/opt/root/lib
     cd /opt && unzip CNVnator_v0.4.1.zip
     cd /opt/CNVnator_v0.4.1/src/
     ln -s /opt/samtools-1.11 samtools
-    make LIBS=-ldl
+    LIBS=-ldl make
