@@ -43,9 +43,11 @@ LD_LIBRARY_PATH=/opt/root/lib
     make all all-htslib
     make install install-htslib
     
-    cd /opt/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip 
-    cd /opt && unzip CNVnator_v0.4.1.zip
-    cd /opt/CNVnator_v0.4.1/src/
+    #cd /opt/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip 
+    #cd /opt && unzip CNVnator_v0.4.1.zip
+    #cd /opt/CNVnator_v0.4.1/src/
+    cd /opt/ && wget https://github.com/kristinebilgrav/CNVnator-1.git
+    cd /opt/CNVnator-1
     ln -s /opt/samtools-1.11 samtools
     #LIBS=-ldl make
     make LIBS="-lcrypto"
