@@ -39,7 +39,8 @@ LD_LIBRARY_PATH=/opt/root/lib
     ./configure
     make
     make install
-    make all all-htslib
+    make install install-htslib
+    #make all all-htslib
     
     cd /opt/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip 
     cd /opt && unzip CNVnator_v0.4.1.zip
