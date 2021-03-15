@@ -44,4 +44,4 @@ LD_LIBRARY_PATH=/opt/root/lib
     cd /opt && unzip CNVnator_v0.4.1.zip
     cd /opt/CNVnator_v0.4.1/src/
     ln -s /opt/samtools-1.11 samtools
-    make OMP=no
+    make LIBS=-ldl
