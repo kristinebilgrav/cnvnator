@@ -42,8 +42,10 @@ LD_LIBRARY_PATH=/opt/root/lib
     make install install-htslib
     #make all all-htslib
     
-    cd /opt/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip 
-    cd /opt && unzip CNVnator_v0.4.1.zip
-    cd /opt/CNVnator_v0.4.1/src/
+    cd /opt/ && git clone https://github.com/abyzovlab/CNVnator.git
+    cd /opt/CNVnator
+    #cd /opt/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip 
+    #cd /opt && unzip CNVnator_v0.4.1.zip
+    #cd /opt/CNVnator_v0.4.1/src/
     ln -s /opt/samtools-1.11 samtools
     LIBS=-ldl make
