@@ -3,7 +3,10 @@ From: ubuntu:16.04
 
 %runscript
     echo "CNVnator exists here"
-
+    
+%environment
+    LC_ALL=C.UTF-8 
+    
 %post
     echo "Hello from inside the container"
     apt-get update
@@ -12,10 +15,8 @@ From: ubuntu:16.04
 
     cd /opt/ && wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
     cd /opt/ && tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
-    #source /opt/root/bin/thisroot.sh
+    source /opt/root/bin/thisroot.sh
     
-%environment
-    LC_ALL=C.UTF-8    
     export ROOTSYS=/opt/root/bin:${PATH}
     export PATH=$PATH:$ROOTSYS/opt
     export SHLIB_PATH=$SHLIB_PATH:$ROOTSYS/lib
