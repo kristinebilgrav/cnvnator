@@ -6,44 +6,45 @@ From: ubuntu:16.04
     
 %environment
     LC_ALL=C.UTF-8 
+    SHELL=/bin/bash
     
-%post
+%post  #installed in root/.singularity/docker
     echo "Hello from inside the container"
     apt-get update
     apt-get -y install wget git bzip2 build-essential gcc zlib1g-dev language-pack-en-base apt-transport-https make cmake unzip libbz2-dev libncurses5-dev libncursesw5-dev libreadline-dev liblzma-dev libcurl4-gnutls-dev libssl-dev autoconf automake  perl  
     update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8   
 
-    cd /opt/ && wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
-    cd /opt/ && tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
-    source /opt/root/bin/thisroot.sh
+    cd /bin
+    && wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+    tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+    source /bin/root/bin/thisroot.sh
     
-    export ROOTSYS=/opt/root/bin:${PATH}
-    export PATH=$PATH:$ROOTSYS/opt
+    export ROOTSYS=/bin/root/bin:${PATH}
+    export PATH=$PATH:$ROOTSYS/bin
     export SHLIB_PATH=$SHLIB_PATH:$ROOTSYS/lib
-
-%post    
+  
     #install samtools
-    cd /opt/ && wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2
-    cd /opt/ && tar -xvf samtools-1.11.tar.bz2
-    cd /opt/samtools-1.11
+    cd /bin/ && wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2
+    tar -xvf samtools-1.11.tar.bz2
+    cd /bin/samtools-1.11
     ./configure
     make
     make install
     make all all-htslib
     make install install-htslib
     
-    cd /opt/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip 
-    cd /opt && unzip CNVnator_v0.4.1.zip
+    cd /bin/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip  
+    unzip CNVnator_v0.4.1.zip
     cd /opt/CNVnator_v0.4.1/src/
     #cd /opt/ && git clone https://github.com/kristinebilgrav/CNVnator-1.git
     #cd /opt/CNVnator-1
-    ln -s /opt/samtools-1.11 samtools
+    ln -s /bin/samtools-1.11 samtools
     #LIBS=-ldl make
     make LIBS="-lcrypto"
     
     cd opt/root/bin
-    ln -s /opt/CNVnator_v0.4.1/src/cnvnator
-    ln -s /opt/CNVnator_v0.4.1/src/plotcircular.py
-    ln -s /opt/CNVnator_v0.4.1/src/plotrdbaf.py
-    ln -s /opt/CNVnator_v0.4.1/src/plotbaf.py
-    ln -s /opt/CNVnator_v0.4.1/src/pytools
+    ln -s /bin/CNVnator_v0.4.1/src/cnvnator
+    ln -s /bin/CNVnator_v0.4.1/src/plotcircular.py
+    ln -s /bin/CNVnator_v0.4.1/src/plotrdbaf.py
+    ln -s /bin/CNVnator_v0.4.1/src/plotbaf.py
+    ln -s /bin/CNVnator_v0.4.1/src/pytools
