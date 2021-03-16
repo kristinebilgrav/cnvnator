@@ -15,7 +15,7 @@ From: ubuntu:16.04
     update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8   
 
     cd /bin
-    && wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
+    wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
     tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
     source /bin/root/bin/thisroot.sh
     
