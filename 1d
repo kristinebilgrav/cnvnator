@@ -19,7 +19,7 @@ From: ubuntu:16.04
     tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
     #source /root/bin/thisroot.sh
     
-    export ROOTSYS=/bin/root/bin:${PATH}
+    export ROOTSYS=/bin/root:${PATH}
     export PATH=$PATH:$ROOTSYS/bin
     export SHLIB_PATH=$SHLIB_PATH:$ROOTSYS/lib
   
