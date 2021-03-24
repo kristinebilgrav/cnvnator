@@ -36,9 +36,9 @@ From: ubuntu:16.04
     
     #install CNVnator
     cd /bin/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.3.3/CNVnator_v0.3.3.zip
-    unzip CNVnator_v0.3.3.zip
-    cd CNVnator_v0.3.3/src/samtools $$ make
-    cd CNVnator_v0.3.3/src && make 
+    cd /bin/ && unzip CNVnator_v0.3.3.zip
+    cd /bin/CNVnator_v0.3.3/src/samtools && make
+    cd /bin/CNVnator_v0.3.3/src && make 
     
     #ln -s /bin/samtools-1.11 samtools
     #LIBS=-ldl make
