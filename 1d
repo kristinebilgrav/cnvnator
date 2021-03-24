@@ -35,12 +35,14 @@ From: ubuntu:16.04
     make install install-htslib
     
     #install CNVnator
-    cd /bin/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip  
-    unzip CNVnator_v0.4.1.zip
-    cd CNVnator_v0.4.1/src/
-    ln -s /bin/samtools-1.11 samtools
+    cd /bin/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.3.3/CNVnator_v0.3.3.zip
+    unzip CNVnator_v0.3.3.zip
+    cd CNVnator_v0.3.3/src/samtools $$ make
+    cd CNVnator_v0.3.3/src && make 
+    
+    #ln -s /bin/samtools-1.11 samtools
     #LIBS=-ldl make
-    make OMP=no
+    #make OMP=no
     
    
     #ln -s /bin/CNVnator_v0.4.1/src/cnvnator 
