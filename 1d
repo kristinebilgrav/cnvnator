@@ -34,7 +34,7 @@ From: ubuntu:16.04
     #install CNVnator
     cd /bin/ && wget https://github.com/abyzovlab/CNVnator/releases/download/v0.4.1/CNVnator_v0.4.1.zip  
     unzip CNVnator_v0.4.1.zip
-    cd /opt/CNVnator_v0.4.1/src/
+    cd CNVnator_v0.4.1/src/
     ln -s /bin/samtools-1.11 samtools
     #LIBS=-ldl make
     make LIBS="-lcrypto"
