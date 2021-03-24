@@ -7,6 +7,10 @@ From: ubuntu:16.04
 %environment
     LC_ALL=C.UTF-8 
     SHELL:=/bin/bash
+    ROOTSYS=/bin/root
+    PATH=$PATH:$ROOTSYS/bin
+    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
+    
     
 %post  
     echo "Hello from inside the container"
@@ -45,8 +49,5 @@ From: ubuntu:16.04
     #make OMP=no
     
    
-    #ln -s /bin/CNVnator_v0.4.1/src/cnvnator 
-    #ln -s /bin/CNVnator_v0.4.1/src/plotcircular.py
-    #ln -s /bin/CNVnator_v0.4.1/src/plotrdbaf.py
-    #ln -s /bin/CNVnator_v0.4.1/src/plotbaf.py
-    #ln -s /bin/CNVnator_v0.4.1/src/pytools
+    ln -s /bin/CNVnator_v0.3.3/src/cnvnator /bin/cnvnator 
+
