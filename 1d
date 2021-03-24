@@ -19,7 +19,8 @@ From: ubuntu:16.04
 
     export ROOTSYS=/bin/root:${PATH}
     export PATH=$PATH:$ROOTSYS/bin
-    export SHLIB_PATH=$SHLIB_PATH:$ROOTSYS/lib
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
+    #export SHLIB_PATH=$SHLIB_PATH:$ROOTSYS/lib
   
     #install samtools
     cd /bin/ && wget https://github.com/samtools/samtools/releases/download/1.11/samtools-1.11.tar.bz2
@@ -39,9 +40,9 @@ From: ubuntu:16.04
     #LIBS=-ldl make
     make LIBS="-lcrypto"
     
-    cd opt/root/bin
-    ln -s /bin/CNVnator_v0.4.1/src/cnvnator
-    ln -s /bin/CNVnator_v0.4.1/src/plotcircular.py
-    ln -s /bin/CNVnator_v0.4.1/src/plotrdbaf.py
-    ln -s /bin/CNVnator_v0.4.1/src/plotbaf.py
-    ln -s /bin/CNVnator_v0.4.1/src/pytools
+   
+    #ln -s /bin/CNVnator_v0.4.1/src/cnvnator 
+    #ln -s /bin/CNVnator_v0.4.1/src/plotcircular.py
+    #ln -s /bin/CNVnator_v0.4.1/src/plotrdbaf.py
+    #ln -s /bin/CNVnator_v0.4.1/src/plotbaf.py
+    #ln -s /bin/CNVnator_v0.4.1/src/pytools
