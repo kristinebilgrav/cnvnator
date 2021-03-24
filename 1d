@@ -17,9 +17,11 @@ From: ubuntu:16.04
     cd /bin && wget https://root.cern/download/root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
     cd /bin && tar -xvf root_v6.22.08.Linux-ubuntu16-x86_64-gcc5.4.tar.gz
 
-    export ROOTSYS=/bin/root:${PATH}
+    export ROOTSYS=/bin/root
     export PATH=$PATH:$ROOTSYS/bin
     export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib
+    
+    
     #export SHLIB_PATH=$SHLIB_PATH:$ROOTSYS/lib
   
     #install samtools
@@ -38,7 +40,7 @@ From: ubuntu:16.04
     cd CNVnator_v0.4.1/src/
     ln -s /bin/samtools-1.11 samtools
     #LIBS=-ldl make
-    make LIBS="-lcrypto"
+    make OMP=no
     
    
     #ln -s /bin/CNVnator_v0.4.1/src/cnvnator 
